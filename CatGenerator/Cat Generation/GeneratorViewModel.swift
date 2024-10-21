@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 protocol GeneratorViewModelProtocol: ObservableObject {
     var cat: Cat? { get }
@@ -24,23 +25,44 @@ class GeneratorViewModel: GeneratorViewModelProtocol {
     @Published var cat: Cat?
     @Published var isCatSaved = false
     
-    private let generateCatUseCase: GenerateCatUseCaseProtocol
+    var catImageURL: URL? {
+        
+        if let cat = cat, let urlString = cat.imageURL {
+            return URL(string: urlString)
+        }
+        
+        return nil
+    }
+    
+    private let generateCatUseCase: any GenerateCatUseCaseProtocol
     private let saveCatUseCase: SaveCatUseCaseProtocol
+    private var cancellables = Set<AnyCancellable>()
 
-    init(generateCatUseCase: GenerateCatUseCaseProtocol, saveCatUseCase: SaveCatUseCaseProtocol) {
+    init(generateCatUseCase: any GenerateCatUseCaseProtocol,
+         saveCatUseCase: SaveCatUseCaseProtocol) {
         self.generateCatUseCase = generateCatUseCase
         self.saveCatUseCase = saveCatUseCase
+        addSubscribers()
     }
     
     func recieveIntent(_ intent: Intent) {
         switch intent {
         case .generateCat:
-            cat = generateCatUseCase.execute()
+            cat = nil
             isCatSaved = false
+            generateCatUseCase.execute()
         case .saveCat(let cat):
             saveCatUseCase.execute(cat: cat)
             isCatSaved = true
         }
+    }
+    
+    private func addSubscribers() {
+        generateCatUseCase.catPublisher
+            .sink { [weak self] cat in
+                self?.cat = cat
+            }
+            .store(in: &cancellables)
     }
     
 }
