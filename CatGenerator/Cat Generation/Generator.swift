@@ -15,6 +15,7 @@ protocol GeneratorProtocol {
 struct Generator: GeneratorProtocol {
 
     private let maxAttributePoints = 5
+    private let catAttributeTypes = ["Softness", "Cuteness", "Agility", "Speed", "Stealth"]
 
     /**
      Generates a Cat entity with randomly set attributes and assigns a name that reflects those attribute values.
@@ -23,27 +24,36 @@ struct Generator: GeneratorProtocol {
      */
     func generateCat() -> Cat {
 
-        var cat = Cat(name: "Unnamed",
-                      softness: Int.random(in: 0...maxAttributePoints),
-                      cuteness: Int.random(in: 0...maxAttributePoints),
-                      agility: Int.random(in: 0...maxAttributePoints),
-                      speed: Int.random(in: 0...maxAttributePoints),
-                      stealth: Int.random(in: 0...maxAttributePoints),
+        var catAttributes = [String: Int]()
+        
+        for attributeType in catAttributeTypes {
+            catAttributes[attributeType] = Int.random(in: 0...maxAttributePoints)
+        }
+        
+        var cat = Cat(name: generateName(for: catAttributes),
+                      attributes: catAttributes,
+                      qualityLevel: generateQualityLevel(for: catAttributes),
                       isSaved: false)
-
-        let name = generateName(for: cat)
-        cat.name = name
-
         return cat
     }
 
     /**
      Generates an appropriate name for the passed Cat based on assigned attribute levels
-     - Parameter cat: The Cat to be named.
+     - Parameter attributes: Indicates the total number of attributes as well as the assigned values for each
      - Returns: The generated Cat name
      */
-    private func generateName(for cat: Cat) -> String {
-
+    private func generateName(for attributes: [String: Int]) -> String {
+        // TODO: Implement
         return "Not Yet Implemented"
+    }
+    
+    /**
+     Determins the cat quality level based on the passed attribute values. Assumes a total posible value of maxAttributePoints
+     - Parameter attributes: Indicates the total number of attributes as well as the assigned values for each
+     - Returns: The calculated quality level of the cat.
+     */
+    private func generateQualityLevel(for attributes: [String: Int]) -> CatQualityLevel {
+        // TODO: Implement
+        return .common
     }
 }

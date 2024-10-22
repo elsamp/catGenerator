@@ -7,32 +7,30 @@
 
 import Foundation
 
+enum CatQualityLevel {
+    case common
+    case uncommon
+    case rare
+    case legendary
+    case godlike
+}
+
 struct Cat {
     var name: String
-    // Attributes
-    let softness: Int
-    let cuteness: Int
-    let agility: Int
-    let speed: Int
-    let stealth: Int
+    let attributes: Dictionary<String, Int>
+    let qualityLevel: CatQualityLevel
     var imageURL: String?
     var isSaved: Bool
 
     init(name: String,
-         softness: Int,
-         cuteness: Int,
-         agility: Int,
-         speed: Int,
-         stealth: Int,
+         attributes: Dictionary<String, Int>,
+         qualityLevel: CatQualityLevel,
          imageURL: String? = nil,
          isSaved: Bool) {
         
         self.name = name
-        self.softness = softness
-        self.cuteness = cuteness
-        self.agility = agility
-        self.speed = speed
-        self.stealth = stealth
+        self.attributes = attributes
+        self.qualityLevel = qualityLevel
         self.imageURL = imageURL
         self.isSaved = isSaved
     }

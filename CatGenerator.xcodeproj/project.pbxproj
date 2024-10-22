@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B09C6F4E2CC6F82A00D1202A /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C6F4D2CC6F82A00D1202A /* CatViewModel.swift */; };
+		B09C6F532CC7C58E00D1202A /* CatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C6F522CC7C58E00D1202A /* CatCardView.swift */; };
+		B09C6F552CC7C5E500D1202A /* PreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C6F542CC7C5E500D1202A /* PreviewHelper.swift */; };
 		B0E535022CC685D100D23B8B /* CatGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E535012CC685D100D23B8B /* CatGeneratorApp.swift */; };
 		B0E535042CC685D100D23B8B /* CatGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E535032CC685D100D23B8B /* CatGenerationView.swift */; };
 		B0E535062CC685D300D23B8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E535052CC685D300D23B8B /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		B09C6F4D2CC6F82A00D1202A /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
+		B09C6F522CC7C58E00D1202A /* CatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCardView.swift; sourceTree = "<group>"; };
+		B09C6F542CC7C5E500D1202A /* PreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelper.swift; sourceTree = "<group>"; };
 		B0E534FE2CC685D100D23B8B /* CatGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E535012CC685D100D23B8B /* CatGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGeneratorApp.swift; sourceTree = "<group>"; };
 		B0E535032CC685D100D23B8B /* CatGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGenerationView.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B0E535082CC685D300D23B8B /* Preview Assets.xcassets */,
+				B09C6F542CC7C5E500D1202A /* PreviewHelper.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				B09C6F4D2CC6F82A00D1202A /* CatViewModel.swift */,
+				B09C6F522CC7C58E00D1202A /* CatCardView.swift */,
 			);
 			path = "Cat Viewing";
 			sourceTree = "<group>";
@@ -126,7 +132,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B09C6F512CC7C11600D1202A /* PBXTargetDependency */,
 			);
 			name = CatGenerator;
 			productName = CatGenerator;
@@ -187,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0E535172CC68F3E00D23B8B /* Cat.swift in Sources */,
+				B09C6F552CC7C5E500D1202A /* PreviewHelper.swift in Sources */,
+				B09C6F532CC7C58E00D1202A /* CatCardView.swift in Sources */,
 				B0E535192CC692AE00D23B8B /* GenerateCatUseCase.swift in Sources */,
 				B0E535152CC68EE100D23B8B /* Generator.swift in Sources */,
 				B0E535042CC685D100D23B8B /* CatGenerationView.swift in Sources */,
@@ -199,13 +206,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B09C6F512CC7C11600D1202A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = B09C6F502CC7C11600D1202A /* SwiftLintBuildToolPlugin */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B0E5350A2CC685D300D23B8B /* Debug */ = {
@@ -418,14 +418,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B09C6F502CC7C11600D1202A /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B09C6F4F2CC7C04000D1202A /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0E534F62CC685D000D23B8B /* Project object */;
 }

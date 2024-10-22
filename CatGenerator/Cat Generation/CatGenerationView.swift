@@ -43,31 +43,6 @@ struct CatGenerationView: View {
         .padding()
     }
 
-    func catStatBar(label: String, value: Int) -> some View {
-
-        HStack {
-            Text(label)
-            ForEach(0...value, id: \.self) { _ in
-                Image(systemName: "star.fill")
-            }
-        }
-
-    }
-}
-
-struct CatCardView: View {
-
-    @ObservedObject var viewModel: CatViewModel
-
-    var body: some View {
-       VStack {
-           Text(viewModel.cat.name)
-           AsyncImage(url: viewModel.catImageURL)
-           Image(systemName: viewModel.cat.isSaved ? "heart.fill" : "heart")
-               .resizable()
-               .scaledToFit()
-       }
-    }
 }
 
 #Preview {
