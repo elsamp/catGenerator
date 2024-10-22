@@ -7,19 +7,18 @@
 
 import Foundation
 
-
 protocol SaveCatUseCaseProtocol {
-    
+
     func execute(cat: Cat)
 }
 
 struct SaveCatUseCase: SaveCatUseCaseProtocol {
-    
+
     /**
      Save the passed cat in local persistant storage (expand...)
      */
     func execute(cat: Cat) {
-        
-        //TODO: persist in local storage
+
+        // TODO: persist in local storage
     }
 }

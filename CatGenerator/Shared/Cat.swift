@@ -8,20 +8,25 @@
 import Foundation
 
 struct Cat {
-    
     var name: String
-    
-    //attributes
+    // Attributes
     let softness: Int
     let cuteness: Int
     let agility: Int
     let speed: Int
     let stealth: Int
-    
-    //image data
     var imageURL: String?
-    
-    init(name: String, softness: Int, cuteness: Int, agility: Int, speed: Int, stealth: Int, imageURL: String? = nil) {
+    var isSaved: Bool
+
+    init(name: String,
+         softness: Int,
+         cuteness: Int,
+         agility: Int,
+         speed: Int,
+         stealth: Int,
+         imageURL: String? = nil,
+         isSaved: Bool) {
+        
         self.name = name
         self.softness = softness
         self.cuteness = cuteness
@@ -29,10 +34,9 @@ struct Cat {
         self.speed = speed
         self.stealth = stealth
         self.imageURL = imageURL
+        self.isSaved = isSaved
     }
-    
 }
-
 
 /*
  [

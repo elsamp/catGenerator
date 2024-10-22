@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B09C6F4E2CC6F82A00D1202A /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C6F4D2CC6F82A00D1202A /* CatViewModel.swift */; };
 		B0E535022CC685D100D23B8B /* CatGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E535012CC685D100D23B8B /* CatGeneratorApp.swift */; };
-		B0E535042CC685D100D23B8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E535032CC685D100D23B8B /* ContentView.swift */; };
+		B0E535042CC685D100D23B8B /* CatGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E535032CC685D100D23B8B /* CatGenerationView.swift */; };
 		B0E535062CC685D300D23B8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E535052CC685D300D23B8B /* Assets.xcassets */; };
 		B0E535092CC685D300D23B8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E535082CC685D300D23B8B /* Preview Assets.xcassets */; };
 		B0E535152CC68EE100D23B8B /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E535142CC68EE100D23B8B /* Generator.swift */; };
@@ -20,9 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B09C6F4D2CC6F82A00D1202A /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
 		B0E534FE2CC685D100D23B8B /* CatGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E535012CC685D100D23B8B /* CatGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGeneratorApp.swift; sourceTree = "<group>"; };
-		B0E535032CC685D100D23B8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B0E535032CC685D100D23B8B /* CatGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGenerationView.swift; sourceTree = "<group>"; };
 		B0E535052CC685D300D23B8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0E535082CC685D300D23B8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B0E535142CC68EE100D23B8B /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
@@ -67,7 +69,6 @@
 				B0E535102CC6870F00D23B8B /* Cat Viewing */,
 				B0E5350F2CC6870100D23B8B /* Cat Generation */,
 				B0E535012CC685D100D23B8B /* CatGeneratorApp.swift */,
-				B0E535032CC685D100D23B8B /* ContentView.swift */,
 				B0E535052CC685D300D23B8B /* Assets.xcassets */,
 				B0E535072CC685D300D23B8B /* Preview Content */,
 			);
@@ -89,6 +90,7 @@
 				B0E535182CC692AE00D23B8B /* GenerateCatUseCase.swift */,
 				B0E5351C2CC6979E00D23B8B /* SaveCatUseCase.swift */,
 				B0E5351A2CC693CF00D23B8B /* GeneratorViewModel.swift */,
+				B0E535032CC685D100D23B8B /* CatGenerationView.swift */,
 			);
 			path = "Cat Generation";
 			sourceTree = "<group>";
@@ -96,6 +98,7 @@
 		B0E535102CC6870F00D23B8B /* Cat Viewing */ = {
 			isa = PBXGroup;
 			children = (
+				B09C6F4D2CC6F82A00D1202A /* CatViewModel.swift */,
 			);
 			path = "Cat Viewing";
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B09C6F512CC7C11600D1202A /* PBXTargetDependency */,
 			);
 			name = CatGenerator;
 			productName = CatGenerator;
@@ -153,6 +157,9 @@
 				Base,
 			);
 			mainGroup = B0E534F52CC685D000D23B8B;
+			packageReferences = (
+				B09C6F4F2CC7C04000D1202A /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			productRefGroup = B0E534FF2CC685D100D23B8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -182,8 +189,9 @@
 				B0E535172CC68F3E00D23B8B /* Cat.swift in Sources */,
 				B0E535192CC692AE00D23B8B /* GenerateCatUseCase.swift in Sources */,
 				B0E535152CC68EE100D23B8B /* Generator.swift in Sources */,
-				B0E535042CC685D100D23B8B /* ContentView.swift in Sources */,
+				B0E535042CC685D100D23B8B /* CatGenerationView.swift in Sources */,
 				B0E5351F2CC6C2D400D23B8B /* CatImage.swift in Sources */,
+				B09C6F4E2CC6F82A00D1202A /* CatViewModel.swift in Sources */,
 				B0E5351D2CC6979E00D23B8B /* SaveCatUseCase.swift in Sources */,
 				B0E5351B2CC693CF00D23B8B /* GeneratorViewModel.swift in Sources */,
 				B0E535022CC685D100D23B8B /* CatGeneratorApp.swift in Sources */,
@@ -191,6 +199,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B09C6F512CC7C11600D1202A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = B09C6F502CC7C11600D1202A /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B0E5350A2CC685D300D23B8B /* Debug */ = {
@@ -392,6 +407,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B09C6F4F2CC7C04000D1202A /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.57.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B09C6F502CC7C11600D1202A /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B09C6F4F2CC7C04000D1202A /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0E534F62CC685D000D23B8B /* Project object */;
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct CatGeneratorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CatGenerationView()
         }
     }
 }

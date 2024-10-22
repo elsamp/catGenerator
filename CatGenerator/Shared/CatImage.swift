@@ -7,7 +7,7 @@
 
 import Foundation
 
-//Expected format returned from https://api.thecatapi.com/v1/images/search
+// Expected format returned from https://api.thecatapi.com/v1/images/search
 
 /*
  [
@@ -21,10 +21,8 @@ import Foundation
  */
 
 struct CatImage: Identifiable, Codable {
-    
     let id: String
     let url: String
     let width: Int
     let height: Int
-    
 }
